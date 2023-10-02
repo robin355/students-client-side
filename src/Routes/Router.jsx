@@ -20,7 +20,7 @@ export const router=createBrowserRouter([
             {
                 path:'/updateStudent/:id',
                 element:<Update></Update>,
-                loader: ({ params }) => fetch(`http://localhost/students-server-side/get-student.php?id=${params?.id}`)
+                loader: ({ params }) => fetch(`http://std-srv-sid.atwebpages.com/get-student.php?id=${params?.id}`)
                 
             }
         ]

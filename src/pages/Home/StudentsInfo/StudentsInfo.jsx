@@ -10,11 +10,11 @@ import { toast } from "react-toastify";
 // import { Link } from "react-router-dom";
 const StudentsInfo = () => {
 const [students,setStudent]=useState([]);
-// axios.get(`http://localhost/students-server-side/all-studnets.php`).then(function(response){
+// axios.get(`http://std-srv-sid.atwebpages.com/all-studnets.php`).then(function(response){
 //     setStudent(response.data);
 // })
 useEffect(()=>{
-    fetch(`http://localhost/students-server-side/all-studnets.php`)
+    fetch(`http://std-srv-sid.atwebpages.com/all-studnets.php`)
     .then(res=>res.json())
     .then(data=>setStudent(data))
     
@@ -29,12 +29,12 @@ useEffect(()=>{
 // console.log(html);
 const handleDelete = (id) => {
   console.log(id)
-  fetch(`http://localhost/students-server-side/delete?id=${id}`)
+  fetch(`http://std-srv-sid.atwebpages.com/delete?id=${id}`)
       .then(res => res.json())
       .then(data => {
           if (data.success==true) {
               toast.success(data.message)
-              fetch(`http://localhost/students-server-side/all-studnets.php`)
+              fetch(`http://std-srv-sid.atwebpages.com/all-studnets.php`)
                 .then(res=>res.json())
                 .then(data=>setStudent(data))
               // const remaing = students.filter(studentId => studentId._id !== id)

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const Addstudent = () => {
 
@@ -27,9 +28,15 @@ const Addstudent = () => {
 
         const data = new FormData();
         data.append('student', JSON.stringify(student));
-        axios.post(`http://localhost/students-server-side/`,data)
+        axios.post(`http://std-srv-sid.atwebpages.com/`,data)
         // .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            if(data.data.success==true){
+                toast.success(data.data.message)
+            }else{
+                toast.error(data.data.message)
+            }
+        })
 
 
 console.log(student)

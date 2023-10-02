@@ -13,7 +13,7 @@ const Update = () => {
 
         
         
-        axios.post(`http://localhost/students-server-side/update.php?id=${loadData.data?.id}`, fData)
+        axios.post(`http://std-srv-sid.atwebpages.com/update.php?id=${loadData.data?.id}`, fData)
             .then(data => {
                 data = data.data
                 if (data.success==true) {
