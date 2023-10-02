@@ -1,32 +1,17 @@
-// import { useEffect, useState } from "react";
-// import toast from "react-hot-toast";
-// import { Link } from "react-router-dom";
-// import { Link } from "react-router-dom";
 import { useEffect,} from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
-// import { Link } from "react-router-dom";
 const StudentsInfo = () => {
 const [students,setStudent]=useState([]);
-// axios.get(`http://std-srv-sid.atwebpages.com/all-studnets.php`).then(function(response){
-//     setStudent(response.data);
-// })
+
 useEffect(()=>{
     fetch(`http://std-srv-sid.atwebpages.com/all-studnets.php`)
     .then(res=>res.json())
     .then(data=>setStudent(data))
     
 },[])
-// let i = 0, j = 0;
-// for( i = 0;i < students.length; i++){
-//     for( j = 0; j < students[i].length; j++){
-//         html += <span>{students[i][j]}</span>;
-//     }
-// }
-
-// console.log(html);
 const handleDelete = (id) => {
   console.log(id)
   fetch(`http://std-srv-sid.atwebpages.com/delete?id=${id}`)
@@ -37,8 +22,7 @@ const handleDelete = (id) => {
               fetch(`http://std-srv-sid.atwebpages.com/all-studnets.php`)
                 .then(res=>res.json())
                 .then(data=>setStudent(data))
-              // const remaing = students.filter(studentId => studentId._id !== id)
-              // setStudent(remaing)
+      
           }else{
             toast.error(data.message)
           }

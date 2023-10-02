@@ -23,7 +23,6 @@ const Addstudent = () => {
             email:email,
             mobile:mobile
 
-
         }
 
         const data = new FormData();
@@ -40,22 +39,6 @@ const Addstudent = () => {
 
 
 console.log(student)
-        // fetch('https://student-info-server-2er3iek2e-robin355.vercel.app/addstudent', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(student),
-        // })
-
-        // .then(res => res.json())
-        //     .then(data => {
-        //         if (data.acknowledged > 0) {
-        //             // toast.success('added successFully')
-        //             form.reset()
-        //         }
-        //     })
-        //     .catch(error => console.log(error))
     }
     return (
         <div>
